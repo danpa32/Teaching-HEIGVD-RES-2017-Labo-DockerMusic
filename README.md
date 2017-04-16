@@ -3,10 +3,10 @@
 ## Admin
 
 * Every student must deliver a complete solution.
-* It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to use exactly the same directory structure for the validation procedure to work. 
+* It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to use exactly the same directory structure for the validation procedure to work.
 * There will not be a "full" lab grade for this long lab, but there will be one point to gain for the "salami" TE grade (i.e. it is one of the "challenges"). Also, the skills that you will learn during this lab will be necessary for subsequent labs.
 * We expect that you will have more issues and questions than with other labs (because we have a left some questions open on purpose). Please ask your questions on telegram or in the forum, so that everyone in the class can benefit from the discussion.
- 
+
 ## Objectives
 
 This lab has 4 objectives:
@@ -105,15 +105,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | --- | --- |
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
-| | *Insert your diagram here...* |
+| | ![Architecture diagram](images/architecture.png) |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | *Enter your response here...* |
+| | The **musician(s)** is/are going to send UDP datagram(s) every second. |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-| | *Enter your response here...* |
+| | The **Auditor** is going to listen for UDP datagrams and with every datagram received, the list of active musicians will be update. |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | *Enter your response here...* |
+| | The payload is in **JSON format** and contains : <br>- a uuid<br/> - the type of instrument<br/> - the sound made by the instrument |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | *Enter your response here...* |
+| | Every second an object, generated once and serialized in JSON, is sent by Each **Musician** as payload of an UDP datagram. The receiver (**Auditor** here) has a list of active musician, updated on each TCP datagram received. Each items in this list are the same object send by the musician with an additional information : the date of first activity of the musician. This list is sent (in JSON format again) to all TCP client connected to **Auditor**|
 
 
 ## Task 2: implement a "musician" Node.js application
@@ -162,13 +162,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | ---  | ---
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group?
 | | *Enter your response here...*
-|Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**? 
+|Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?
 | | *Enter your response here...*
-|Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting? 
+|Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?
 | | *Enter your response here...*
-|Question | When and how do we **get rid of inactive players**? 
+|Question | When and how do we **get rid of inactive players**?
 | | *Enter your response here...*
-|Question | How do I implement a **simple TCP server** in Node.js? 
+|Question | How do I implement a **simple TCP server** in Node.js?
 | | *Enter your response here...*
 
 
