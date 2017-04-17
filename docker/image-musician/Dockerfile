@@ -8,7 +8,7 @@ MAINTAINER Daniel Palumbo
 COPY musician /opt/app
 
 # install node.js dependancies
-RUN cd /opt/app
+RUN cd /opt/app && npm install && npm install node-uuid
 
 # starting point
-ENTRYPOINT ["node", "/opt/app/musicians.js"]
+ENTRYPOINT ["node", "/opt/app/musician.js"]

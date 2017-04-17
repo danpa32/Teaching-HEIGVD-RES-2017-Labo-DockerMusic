@@ -1,0 +1,13 @@
+{
+    "name" : "image-musician",
+    "version" : "1.0.0",
+    "description" : "this lab is making me crazy",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/danpa32/Teaching-HEIGVD-RES-2017-Labo-DockerMusic"
+    },
+    "author" : "Daniel Palumbo",
+    "dependencies" : {
+        "uuid" : "latest"
+    }
+}

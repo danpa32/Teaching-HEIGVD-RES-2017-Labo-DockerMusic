@@ -6,9 +6,9 @@
  * GLOBAL VARIABLES
  **********************/
 
-var dgram = require("dgram");
+var dgram = require('dgram');
 
-var net = require("net");
+var net = require('net');
 
 var protocol = require("./auditor_protocol");
 
@@ -20,8 +20,7 @@ var udpSocket = dgram.createSocket("udp4");
 
 var musicians = [];
 
-
-var tcpSocket = net.createServer(function (socket) {
+var tcpSocket = net.createServer(function(socket) {
    var msg = JSON.stringify(musicians);
    socket.end(msg);
 });
@@ -53,7 +52,7 @@ udpSocket.on("listening", function () {
 });
 
 // UDP socket is receiving a message
-udpSocket.on("msg", function (msg, src) {
+udpSocket.on("message", function (msg, src) {
     console.log("New message : " + msg);
 
     var payload = JSON.parse(msg);
