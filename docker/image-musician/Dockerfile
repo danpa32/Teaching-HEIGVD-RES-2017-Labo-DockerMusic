@@ -5,7 +5,7 @@ FROM node:latest
 MAINTAINER Daniel Palumbo
 
 # copy all javascript source
-COPY musician /opt/app
+COPY src /opt/app
 
 # install node.js dependancies
 RUN cd /opt/app && npm install && npm install node-uuid

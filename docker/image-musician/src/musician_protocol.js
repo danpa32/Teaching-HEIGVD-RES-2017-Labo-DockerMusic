@@ -1,0 +1,2 @@
+exports.MULTICAST_ADDRESS = "230.185.192.108";
+exports.PORT_NUMBER = 9904;

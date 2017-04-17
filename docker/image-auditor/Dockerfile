@@ -8,7 +8,7 @@ MAINTAINER Daniel Palumbo
 EXPOSE 2205
 
 # copy all javascript source
-COPY auditor /opt/app
+COPY src /opt/app
 
 # install node.js dependancies
 RUN cd /opt/app
