@@ -1,0 +1,3 @@
+exports.MULTICAST_ADDRESS = "239.255.3.5";
+exports.TCP_PORT_NUMBER = 2205;
+exports.UDP_PORT_NUMBER = 9904;
