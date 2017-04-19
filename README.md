@@ -177,7 +177,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | How do we validate that the whole system works, once we have built our Docker image?
-| | *Enter your response here...*
+| | 1) Open a docker terminal and run the command `$ docker run -d -p 2205:2205 res/auditor` <br/> 2) Open a terminal and connect to the Auditor TCP port : `telnet <ip_address> <port_number>` <br/> 3) You will receive an empty list of musician <br/> 4) run the command :  `$ docker run -d res/musician <instrument_name>` (you can run it a multiple time) <br/> 5) On the "telnet" terminal, you will receive the current active musicians.
 
 
 ## Constraints
