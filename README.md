@@ -121,21 +121,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**?
-| | *Enter your response here...*
+| | `JSON.stringify(object)`
 |Question | What is **npm**?
-| | *Enter your response here...*
+| | It's a package manager for the runtime **javascript** environment **node.js**.
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?
-| | *Enter your response here...*
+| | - the `npm install` command installs and add the package to the project dependancies.<br> - the `--save` flag will save the package version in jour main **package.json** file.
 |Question | How can we use the `https://www.npmjs.com/` web site?
-| | *Enter your response here...*
+| | By copying the url link and pasting it into your internet browser :D. More seriously, it's a website where the npm packages are stored. It provides informations about all available npm package.
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122?
-| | *Enter your response here...*
+| | We can use a **node.js** package like **uuid** (that's what I have done for this lab).<br> 1) We create the variable that will contain the uuid module : `var uuid = require("uuid");`<br> 2) We generate a random v4 uuid : `uuid.v4()`.
 |Question | In Node.js, how can we execute a function on a **periodic** basis?
-| | *Enter your response here...*
+| | `setInterval(<function_name_without_parenthesis>, <time_interval>)`
 |Question | In Node.js, how can we **emit UDP datagrams**?
-| | *Enter your response here...*
+| | By using the **dgram** package to create a UDP socket and the `send()` method.
 |Question | In Node.js, how can we **access the command line arguments**?
-| | *Enter your response here...*
+| | By the process variable (ex: `var instrument = process.argv[<argument_index>];`)
 
 
 ## Task 3: package the "musician" app in a Docker image
@@ -143,17 +143,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | How do we **define and build our own Docker image**?
-| | *Enter your response here...*
+| | We create a **Dockerfile** and fill it with parameters used to build the docker image.
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?
-| | *Enter your response here...*
+| | An `ENTRYPOINT` allows the configuration of a container that will run as an executable.
 |Question | After building our Docker image, how do we use it to **run containers**?
-| | *Enter your response here...*
+| | -_- really...(see higher in the document)
 |Question | How do we get the list of all **running containers**?
-| | *Enter your response here...*
+| | `docker ps`
 |Question | How do we **stop/kill** one running container?
-| | *Enter your response here...*
+| | `docker kill <conatainer_name>` or `docker stop <container_name>`
 |Question | How can we check that our running containers are effectively sending UDP datagrams?
-| | *Enter your response here...*
+| | we can use the snifer tool (**tcpdump**, **wireshark**, ...)
 
 
 ## Task 4: implement an "auditor" Node.js application
@@ -161,15 +161,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group?
-| | *Enter your response here...*
+| | 1) Create an UDP socket with the **dgram** package. <br/> 2) Use the `addMembership()` method on the socket to connect to the multicast group.
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?
-| | *Enter your response here...*
+| | By using the `set()` method to add a key/value pair.
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?
-| | *Enter your response here...*
+| | `Moment.js` provides all kinds of methods to parse, validate, manipulate and display dates and time in javascript. In this lab, I used the `Date()` method.
 |Question | When and how do we **get rid of inactive players**?
-| | *Enter your response here...*
+| | Each time we received a datagram we update the $activeSince$ variable (for the corresponding musician) and every second, the program check iff a musican in the list has an outdated $activeSince$ value. If that's the case, the program remove it (in the program, a musician is clean after 5 seconds of inactivity).
 |Question | How do I implement a **simple TCP server** in Node.js?
-| | *Enter your response here...*
+| | By using the **net** package and the **createServer()** method
 
 
 ## Task 5: package the "auditor" app in a Docker image
