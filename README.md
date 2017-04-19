@@ -147,7 +147,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?
 | | An `ENTRYPOINT` allows the configuration of a container that will run as an executable.
 |Question | After building our Docker image, how do we use it to **run containers**?
-| | -_- really...(see higher in the document)
+| | -_- really... (see higher in the document)
 |Question | How do we get the list of all **running containers**?
 | | `docker ps`
 |Question | How do we **stop/kill** one running container?
