@@ -149,7 +149,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | After building our Docker image, how do we use it to **run containers**?
 | | -_- really... (see higher in the document)
 |Question | How do we get the list of all **running containers**?
-| | `` docker ps`
+| | `$ docker ps`
 |Question | How do we **stop/kill** one running container?
 | | `docker kill <container_name>` or `docker stop <container_name>`
 |Question | How can we check that our running containers are effectively sending UDP datagrams?
