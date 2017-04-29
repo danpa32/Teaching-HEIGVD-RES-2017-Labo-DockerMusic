@@ -40,8 +40,6 @@ function makeSound() {
 
 var instrument = process.argv[2];
 
-console.log(INSTRUMENTS.INSTRUMENTS);
-
 if (INSTRUMENTS.INSTRUMENTS[instrument] === undefined) {
     process.on("exit", function () {
         console.log("The instrument " + instrument + " is not defined.");

@@ -59,6 +59,7 @@ udpSocket.on("message", function (msg, src) {
 
     for (var i = 0; i < musicians.length; i++) {
         if (musicians[i].uuid == payload.uuid) {
+            delete musicians[i].sound;
             musicians[i].activeSince = new Date();
             return;
         }
